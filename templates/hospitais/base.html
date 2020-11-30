@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" href="/static/css/Estilo.css">
+	<title> Hospitalar </title>
+</head>
+<body>
+	<nav class="navbar nav bar-expand-sm bg-light"><!-- (esse simbolo é de comentarios)nessa parte teremos o Menu-->
+		<div class="container">
+			<button class="navbar-toggler " data-toggle= "collapse" data-target= "#navbarSupportedContent">
+				Menu
+			</button>
+			<div class="collapse navbar-collapse " id= "navbarSupportedContent">
+				<ul class="navbar-nav ml-auto mr-auto"><!--lista ordenada usar a taga(<ol>), lista não ordenada(<ul>)-->
+					<li><a href="#" class="nav-link">Home</a></li>
+					<li><a href="#" class="nav-link">Hospitais</a></li>
+					<li><a href="#" class="nav-link">Tipos de hospitais</a></li>
+					<li class="dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle= "dropdown">
+						Gerenciar hospitais</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#" class="dropdown-item">Inserir hospitais</a>
+							</li>
+							<li class="dropdown-divider">
+							</li>
+							<li>
+								<a href="" class="dropdown-item" >Editar hospitais</a>
+							</li>
+							<li class="dropdown-divider">
+							</li>
+							<li>
+								<a href= "" class="dropdown-item" >Excluir hospitais</a>
+							</li>
+
+						</ul>
+
+					</li>
+					<li><a href="#" class="nav-link">Registros</a></li>
+					<li><a href="#" class="nav-link">Login</a></li>
+
+				</ul>
+			</div><!--fim collapse-->
+		</div><!--fim container-->
+	</nav><!--fim menu-->
+	<main>
+		<section class="jumbotron"><!--inicio Titulo-->
+			<form class="input-group">
+				<input class="form-control" type="search" placeholder="Busque aqui">
+				<button class="btn btn-primary ml-1" > Pesquisar </button>
+			</form>
+		</section><!--fim titulo-->
+
+		<section>
+			<form action="." method="POST" enctype="multipart/form-data">
+				{% block content %}
+				
+				{% endblock content %}
+				<input type="submit" value= "Enviar">
+			</form>
+			
+		</section>
+	</main>
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+	integrity="sha256-
+	QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+	crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="/js/bootstrap.js"></script>	
+
+</body>
+</html>
