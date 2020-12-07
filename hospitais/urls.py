@@ -18,18 +18,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
-from django.conf.urls import url
+from django.conf.urls import url, include 
 from django.views.static import serve 
 from django.conf import settings 
-from hospitalapp.views import index, hospitais, criar_hospital, editar, deletar 
+from hospitalapp.views import index, hospitais, criar_hospital, editar, deletar, criar_hospital
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', index),
-    path('hospitais/', hospitais),
-    path('criar_hospital/', criar_hospital),
+    path('index/', index, name = 'index'),
+    path('hospitais/', hospitais, name= 'hospitais'),
+    path('criar_hospital/', criar_hospital, name= 'criar_hospital'),
     path('editar/<int:id>', editar, name= 'editar'),
     path('deletar/<int:id>', deletar , name= 'deletar'),
+    path('', include('usuarios.urls')),
 
 
 

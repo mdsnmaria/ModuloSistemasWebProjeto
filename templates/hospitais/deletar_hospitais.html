@@ -1,5 +1,7 @@
-{% extends "hospitais/baselista.html"%}
+{% extends "hospitais/base.html"%}
 {% block content %}
+
+{% if user.is_authenticated %}
 <h2>
 	Deseja excluir ? {{hosp.nome_hospital}}
 </h2>
@@ -9,4 +11,6 @@
 
 </form>
 <a href="{% url 'hospitais' %}" class="btn btn-warning">Voltar </a>
+
+{% endif %}
 {% endblock content %}

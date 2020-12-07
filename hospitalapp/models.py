@@ -8,10 +8,11 @@ class Hospital(models.Model):
 	tipo_hospital= models.CharField(max_length= 200)
 	conceito_hospital= models.CharField(max_length= 200)
 
+
 	def save(self, *args, **kwargs):
 		super().save(*args, **kwargs)
 		im =  Image.open(self.foto.path) 
-		novo_tamanho =(100,100)
+		novo_tamanho =(250, 250)
 		im.thumbnail(novo_tamanho)
 		im.save(self.foto.path)  
 
@@ -25,4 +26,3 @@ class Hospital(models.Model):
 
 	def __str__(self):
 		return self.nome_hospital
- 

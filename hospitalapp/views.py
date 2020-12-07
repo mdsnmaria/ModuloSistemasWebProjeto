@@ -14,8 +14,6 @@ def deletar(request, id):
 		return redirect('hospitais')
 	return render(request, "hospitais/deletar_hospitais.html", {'hosp': hosp })
 
-
-
 def editar(request, id):
 	hosp= get_object_or_404(Hospital, pk= id)
 	form= Hospitalform(instance= hosp)
@@ -50,7 +48,7 @@ def criar_hospital(request):
 			hosp= form.save()
 			hosp.save()
 			form = Hospitalform()
-			return render(request, 'hospitais/criar_hospitais.html', {'form':form})
+	return render(request, 'hospitais/criar_hospitais.html', {'form':form})
 
 
 # Create your views here.

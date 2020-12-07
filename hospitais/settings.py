@@ -41,7 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hospitalapp',
+    'crispy_forms',
+    'usuarios',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -128,4 +132,7 @@ STATICFILES_DIRS= [
     os.path.join(BASE_DIR, 'static'),
     ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')   
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img') 
+LOGIN_REDIRECT_URL= 'index'  
+LOGOUT_REDIRECT_URL= 'login'
+LOGIN_URL= 'login' 
